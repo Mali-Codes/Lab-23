@@ -29,7 +29,7 @@ int main() {
     while (fin1 >> colors[i++]);
     fin1.close();
 
-
+//checking git staus in both files once more
 
 
     return 0;
