@@ -39,13 +39,18 @@ void display_trip(list<Goat> trip) {
     }
 
     int index = 1;
-    for 
-}
+    for (auto goat : trip) {  
+        cout << "[" << index << "] " << goat.get_name() 
+             << " (" << goat.get_age() << ", " 
+             << goat.get_color() << ")" << endl;
+        index++;
+    }
+};
 
 int select_goat(list<Goat> trip) {
     // TODO: implement this
     return 0;
-}
+};
 
 int main_menu();
 
