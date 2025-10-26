@@ -12,6 +12,27 @@ void delete_goat(list<Goat> &trip);
 void add_goat(list<Goat> &trip, string [], string []);
 void display_trip(list<Goat> trip);
 
+// seeing if the do while is going to work 
+void add_goat(list<Goat> &trip, string names[], string colors[]) {
+    // TODO: implement this
+    cout << "Add goat function - not implemented yet" << endl;
+}
+
+void delete_goat(list<Goat> &trip) {
+    // TODO: implement this
+    cout << "Delete goat function - not implemented yet" << endl;
+}
+
+void display_trip(list<Goat> trip) {
+    // TODO: implement this
+    cout << "Display trip function - not implemented yet" << endl;
+}
+
+int select_goat(list<Goat> trip) {
+    // TODO: implement this
+    return 0;
+}
+
 int main_menu();
 
 int main_menu() {
@@ -24,6 +45,13 @@ int main_menu() {
     cout << "[4] Quit" << endl;
     cout << "choice: ";
     cin >> choice;
+
+    while (choice < 1 || choice > 4) {
+        cout << "Invalid. Enter 1-4: ";
+        cin >> choice;
+    }
+    
+    return choice;
 }
 
 int main() {
@@ -63,8 +91,9 @@ int main() {
 
 
     list<Goat> group;
-
-    do {
+// more efficient thatn a bunch of if else I learned also for loop was limited while isnt hence the switch
+// tutor helped with this
+    do { 
         choice = main_menu();
 
         switch(choice) {
