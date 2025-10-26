@@ -15,6 +15,15 @@ void add_goat(list<Goat> &trip, string [], string []);
 void display_trip(list<Goat> trip);
 
 // seeing if the do while is going to work 
+
+int select_goat(list<Goat> trip) {
+    int choice;
+    cout << "Pick a goat to delete: ";
+    cin >> choice;
+
+    return choice;
+}
+
 void add_goat(list<Goat> &trip, string names[], string colors[]) {
 
     string name = names[rand() % SZ_NAMES];
@@ -27,10 +36,14 @@ void add_goat(list<Goat> &trip, string names[], string colors[]) {
 
     cout << "Added Goat: " << new_goat.get_name() << endl;
 }
-void delete_goat(list<Goat> &trip) {
-    // TODO: implement this
-    cout << "Delete goat function - not implemented yet" << endl;
-}
+// void delete_goat(list<Goat> &trip) {
+//     if (trip.empty()) {
+//         cout << "No goats in the trip to delete" << endl;
+//         return;
+//     }
+//     int index = select_goat(trip);
+
+// }
 
 void display_trip(list<Goat> trip) {
     if(trip.empty()) {
@@ -47,12 +60,6 @@ void display_trip(list<Goat> trip) {
     }
 };
 
-int select_goat(list<Goat> trip) {
-    // TODO: implement this
-    return 0;
-};
-
-int main_menu();
 
 int main_menu() {
     int choice;
@@ -110,27 +117,35 @@ int main() {
 
 
     list<Goat> trip;
+
+
+    cout << "\nTesting select_goat:" << endl;
+    int choice = select_goat(trip);
+    cout << "You selected goat #" << choice << endl;
+
+
+
 // more efficient thatn a bunch of if else I learned also for loop was limited while isnt hence the switch
 // tutor helped with this
-    do { 
-        choice = main_menu();
+    // do { 
+    //     choice = main_menu();
 
-        switch(choice) {
-            case 1:
-                add_goat(trip, names, colors);
-                break;
-            case 2:
-                delete_goat(trip);
-                break;
-            case 3:
-                display_trip(trip);
-                break;
-            case 4:
-                cout << "Goodbye!" << endl;
-                break;
-        }
+    //     switch(choice) {
+    //         case 1:
+    //             add_goat(trip, names, colors);
+    //             break;
+    //         case 2:
+    //             delete_goat(trip);
+    //             break;
+    //         case 3:
+    //             display_trip(trip);
+    //             break;
+    //         case 4:
+    //             cout << "Goodbye!" << endl;
+    //             break;
+    //     }
 
-    } while (choice != 4);
+    // } while (choice != 4);
 
-    return 0;
+    // return 0;
 }
