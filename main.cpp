@@ -17,20 +17,41 @@ int main() {
     srand(time(0));
     bool again;
 
+    int choice;
+
+    cout << "*** GOAT MANAGER 3001 ***\n";
+    cout << "[1] Add a goat" << endl;
+    cout << "[2] Delete a goat" << endl;
+    cout << "[3] List goats" << endl;
+    cout << "[4] Quit" << endl;
+    cout << "choice: ";
+    cin >> choice;
+
+
     // read & populate arrays for names and colors
     ifstream fin("names.txt");
     string names[SZ_NAMES];
     int i = 0;
     while (fin >> names[i++]);
     fin.close();
+
+
     ifstream fin1("colors.txt");
     string colors[SZ_COLORS];
     i = 0;
     while (fin1 >> colors[i++]);
     fin1.close();
 
-//checking git staus in both files once more
-// its working
+
+    list<Goat> group;
+
+    if (choice == 1) {
+        add_goat(group, names, colors);
+    } else if (choice == 2) {
+        delete_goat(group);
+    } else if (choice == 3) {
+        display_trip(group);
+    }
 
     return 0;
 }
