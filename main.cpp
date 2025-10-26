@@ -33,8 +33,13 @@ void delete_goat(list<Goat> &trip) {
 }
 
 void display_trip(list<Goat> trip) {
-    // TODO: implement this
-    cout << "Display trip function - not implemented yet" << endl;
+    if(trip.empty()) {
+        cout << "No goats in the trip!" << endl;
+        return;
+    }
+
+    int index = 1;
+    for 
 }
 
 int select_goat(list<Goat> trip) {
