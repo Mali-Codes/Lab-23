@@ -29,6 +29,7 @@ int main_menu() {
 int main() {
     srand(time(0));
     bool again;
+    int choice;
    
     // ****TESTING IGNORE****
     // Goat g1;                        
@@ -63,13 +64,25 @@ int main() {
 
     list<Goat> group;
 
-    if (choice == 1) {
-        add_goat(group, names, colors);
-    } else if (choice == 2) {
-        delete_goat(group);
-    } else if (choice == 3) {
-        display_trip(group);
-    }
+    do {
+        choice = main_menu();
+
+        switch(choice) {
+            case 1:
+                add_goat(group, names, colors);
+                break;
+            case 2:
+                delete_goat(group);
+                break;
+            case 3:
+                display_trip(group);
+                break;
+            case 4:
+                cout << "Goodbye!" << endl;
+                break;
+        }
+
+    } while (choice != 4);
 
     return 0;
 }

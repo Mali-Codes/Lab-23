@@ -21,6 +21,7 @@ public:
     // setters and getters
     void set_name(string n)         { name = n; };
     string get_name() const         { return name; };
+    
     void set_age(int a)             { age = a; };
     int get_age() const             { return age; }
     void set_color(string c)        { color = c; }
