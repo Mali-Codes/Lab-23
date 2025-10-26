@@ -41,10 +41,15 @@ void delete_goat(list<Goat> &trip) {
         cout << "No goats in the trip to delete" << endl;
         return;
     }
-    int index = select_goat(trip);
+    display_trip(trip);
 
-    auto it = index;
+    int choice = select_goat(trip);
+
+    auto it = trip.begin();
+    advance(it, choice - 1);
     trip.erase(it);
+
+    cout << "Goat " << choice << " deleted." << endl;
 
 }
 
