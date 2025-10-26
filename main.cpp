@@ -30,7 +30,7 @@ int main() {
     fin1.close();
 
 //checking git staus in both files once more
-
+// its working
 
     return 0;
 }
