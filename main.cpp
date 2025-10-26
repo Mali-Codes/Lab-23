@@ -5,7 +5,9 @@
 #include "Goat.h"
 using namespace std;
 
-const int SZ_NAMES = 200, SZ_COLORS = 25, MAX_AGE = 20;
+const int SZ_NAMES = 200, 
+SZ_COLORS = 25, 
+MAX_AGE = 20;
 
 int select_goat(list<Goat> trip);
 void delete_goat(list<Goat> &trip);
@@ -14,10 +16,17 @@ void display_trip(list<Goat> trip);
 
 // seeing if the do while is going to work 
 void add_goat(list<Goat> &trip, string names[], string colors[]) {
-    // TODO: implement this
-    cout << "Add goat function - not implemented yet" << endl;
-}
 
+    string name = names[rand() % SZ_NAMES];
+
+    int age = rand() & MAX_AGE;
+    string color = colors[rand() % SZ_COLORS];
+
+    Goat new_goat(name, age, color);
+    trip.push_back(new_goat);
+
+    cout << "Added Goat: " << new_goat.get_name() << endl;
+}
 void delete_goat(list<Goat> &trip) {
     // TODO: implement this
     cout << "Delete goat function - not implemented yet" << endl;
@@ -90,7 +99,7 @@ int main() {
     fin1.close();
 
 
-    list<Goat> group;
+    list<Goat> trip;
 // more efficient thatn a bunch of if else I learned also for loop was limited while isnt hence the switch
 // tutor helped with this
     do { 
@@ -98,13 +107,13 @@ int main() {
 
         switch(choice) {
             case 1:
-                add_goat(group, names, colors);
+                add_goat(trip, names, colors);
                 break;
             case 2:
-                delete_goat(group);
+                delete_goat(trip);
                 break;
             case 3:
-                display_trip(group);
+                display_trip(trip);
                 break;
             case 4:
                 cout << "Goodbye!" << endl;
