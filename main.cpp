@@ -83,7 +83,7 @@ int main_menu() {
 int main() {
     srand(time(0));
     bool again;
-    int choice;
+    //int choice;
    
     // ****TESTING IGNORE****
     // Goat g1;                        
@@ -118,6 +118,13 @@ int main() {
 
     list<Goat> trip;
 
+    trip.push_back(Goat("Billy", 5, "White"));
+    trip.push_back(Goat("Nanny", 3, "Brown"));
+    trip.push_back(Goat("Gruff", 7, "Black"));
+
+
+    cout << "Current goats:" << endl;
+    display_trip(trip);
 
     cout << "\nTesting select_goat:" << endl;
     int choice = select_goat(trip);
