@@ -11,12 +11,10 @@ int select_goat(list<Goat> trip);
 void delete_goat(list<Goat> &trip);
 void add_goat(list<Goat> &trip, string [], string []);
 void display_trip(list<Goat> trip);
+
 int main_menu();
 
-int main() {
-    srand(time(0));
-    bool again;
-
+int main_menu() {
     int choice;
 
     cout << "*** GOAT MANAGER 3001 ***\n";
@@ -26,6 +24,26 @@ int main() {
     cout << "[4] Quit" << endl;
     cout << "choice: ";
     cin >> choice;
+}
+
+int main() {
+    srand(time(0));
+    bool again;
+   
+    // ****TESTING IGNORE****
+    // Goat g1;                        
+    // Goat g2("Billy");               
+    // Goat g3("Nanny", 5);           
+    // Goat g4("Gruff", 7, "Brown");  
+
+    // cout << "Goat 1: " << g1.get_name() << " (should be empty)" << endl;
+    // cout << "Goat 2: " << g2.get_name() << endl;
+    // cout << "Goat 3: " << g3.get_name() << ", age " << g3.get_age() << endl;
+    // cout << "Goat 4: " << g4.get_name() << ", age " << g4.get_age() 
+    //      << ", color " << g4.get_color() << endl;
+    
+    // return 0;
+
 
 
     // read & populate arrays for names and colors
@@ -55,4 +73,3 @@ int main() {
 
     return 0;
 }
-
